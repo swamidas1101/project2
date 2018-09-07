@@ -1,0 +1,40 @@
+<script>
+$(function(){
+	$.ajax({
+		url:"batchtimings.json",
+		type:"POST",
+		dataType:"json",
+		success:function(x){
+		/*x refers to batchtimings.json*/
+		var y="";
+$.each(x,function(a,b){
+y+="<tr><td>"+b.date+"</td><td>"+b.course+"</td><td>"+b.timings+"</td><td>"+b.faculty+"</td></tr>";
+});
+$("tbody").html(y);
+		}
+	});	
+});
+</script>
+  
+
+	<div class="card bg-primary">
+		<div class="card-body"><h4 style="color:white;">BATCH TIMINGS</h4></div>
+	</div>
+<div style="margin-top:10px"></div> 
+	<div class="table-responsive">
+	<table class="table table-bordered table-striped table-hover">
+	<thead class="thead-dark">
+		<tr>
+		<th>DATE</th>
+		<th>COURSE</th>
+		<th>TIMINGS</th>
+		<th>FACULTY</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	</tbody>
+	</table>
+	</div>
+
+	

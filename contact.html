@@ -1,0 +1,81 @@
+<script>
+$(function(){
+	$("#sbtn").click(function(){
+		var a=$("#name").val();
+		var b=$("#email").val();
+		var c=$("#number").val();
+		var d=$("#course").val();
+		var e=$("#desc").val();
+$.post("result.php",{"nme":a,"eml":b,"num":c,"crs":d,"dsc":e},function(ss){
+		$("#success").html(ss);
+});
+	});
+});
+</script>
+  
+
+	<div class="card bg-primary">
+		<div class="card-body"><h4 style="color:white;">Google Map</h4></div>
+	</div>
+	<div class="row" style="margin-top:10px;">
+		<div class="col-md-12">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.479932105144!2d78.44303931443964!3d17.436728588049014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90cf67ab02fd%3A0xb68eb0d3594f2eaa!2sSivaSoft+Training+And+Development!5e0!3m2!1sen!2sin!4v1529722223867" frameborder="0" style="border:10px solid #ccc;border-radius:7px;width:100%;height:350px" allowfullscreen></iframe>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="card bg-primary">
+		<div class="card-body"><h4 style="color:white;">Route Map</h4></div>
+	</div>
+	<div class="row" style="margin-top:10px;">
+		<div class="col-md-12">
+			<img src="images/sivasoft-address.png">
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="card bg-primary">
+		<div class="card-body"><h4 style="color:white;">Contact Us</h4></div>
+	</div>
+	<div class="row" style="margin-top:10px;">
+		<div class="col-md-12">
+		<div id="success">	
+	
+		<div class="form-group">
+		<label for="name">Name</label>	
+		<input type="text" name="name" id="name" class="form-control">
+		</div>
+		<div class="form-group">
+		<label for="email">Email</label>	
+		<input type="text" name="email" id="email" class="form-control">
+		</div>
+
+		<div class="form-group">
+		<label for="phone">Contact Number</label>	
+		<input type="text" name="phone" id="phone" class="form-control">
+		</div>
+
+
+		<div class="form-group">
+		<label for="course">Course</label>	
+		<select name="course" id="course" class="form-control" multiple>
+		<option value="">Select any course</option>	
+		<option value="ui">UI Technologies</option>
+		<option value="ror">Ruby On Rails</option>
+		<option value="python">Python</option>
+		</select>
+		</div>
+
+		<div class="form-group">
+		<label for="desc">Description</label>	
+		<textarea name="desc" id="desc" class="form-control"></textarea>
+		</div>
+	
+		<button id="sbtn" class="btn btn-primary">Send Data</button>
+		
+			
+		</div>
+		</div>
+	</div>
